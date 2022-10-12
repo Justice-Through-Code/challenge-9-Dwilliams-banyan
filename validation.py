@@ -5,10 +5,19 @@
 # - if the user did not input a number, tell them 'You did not enter a valid number, please try again'
 # - continue to ask them for a valid number until they input one
 # - once a valid number is received, return that number
+def validate_user_input():
+    is_num = False
+    while is_num == False:
+        try:
+            user_number = int(input('Please enter a number '))
+        except ValueError:
+            print('You did not enter a valid number, please try again')
+        else:
+            in_num = True
+            return user_number
 
 # NOTE: What type of error does python throw if you try to turn a non-number string into an integer?
 # Test it out (or google it!) to see which one. Specifically catch that exception in your code.
-
 
 # 1.2 TODO: Once you are done, uncomment the two lines below to ensure that your code works as expected
 
@@ -23,7 +32,11 @@
 
 # NOTE: What type of error does python throw if you try to index into a list past the number of items in it?
 # Test it out (or google it!) to see which one. Specifically catch that exception in your code.
-
+def print_tenth_item(top_ten):
+    try:
+        print(f'{top_ten[9]}')
+    except IndexError:
+        print('N/A')
 
 # 2.2 TODO: Once you are done, uncomment the two lines below to ensure that your code works as expected
 
